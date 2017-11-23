@@ -7,7 +7,7 @@ adapter.js is a shim to insulate apps from spec changes and prefix differences. 
 
 #### NPM
 ```bash
-npm install webrtc-adapter
+npm install webrtc-adapter 
 ```
 
 #### Bower
