@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Interview;
 use File;
 
 
@@ -33,10 +34,16 @@ class VideoController extends Controller
     }
     public function store(Request $request)
     {
-
         $filename=date('YmdHis').'.webm';
-
+        
         $request->file('file')->move('uploads',$filename);
+        $request->file = "";
+        Interview::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'app_data' => 'data'/*json_encode($request->all())*/,
+            'video' => $filename,
+        ]);
 
     	dd($request->file);	
     }

@@ -53,7 +53,13 @@
                                       </div><!-- @end #w -->
 
                                 </div>
-                                                
+                                
+                                <form id="application_data" role="form" method="POST">
+                                    <input type="hidden" name="name" value="{{ session('name') }}" />
+                                    <input type="hidden" name="email" value="{{ session('email') }}" />
+                                    <input type="hidden" name="language_id" value="{{ session('language_id') }}" />
+                                </form>
+                                
                                 <div class="bs-calltoaction bs-calltoaction-success" id="finishButton">
                                     <div class="row">
                                         <div class="col-md-3 cta-button" >

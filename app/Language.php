@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Language extends Model
 {
     protected $fillable = [
-        'body', 'language_id'
+        'name', 'abbr'
     ];
-
 }

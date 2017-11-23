@@ -60,6 +60,8 @@
                         @else
                             <li><a href="{{ url('questions') }}">Questions</a></li>
                             <li><a href="{{ url('videos') }}">Videos</a></li>
+                            <li><a href="{{ url('languages') }}">Languages</a></li>
+                            <li><a href="{{ url('interviews') }}">Interviews</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
