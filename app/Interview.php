@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Interview extends Model
 {
     protected $fillable = [
-        'body', 'language_id'
+        'name', 'email', 'app_data', 'video'
     ];
-
 }

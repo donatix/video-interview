@@ -11,7 +11,7 @@ var player = videojs("myVideo",
             debug: true
         }
     }
-});
+}, function onPlayerReady() {console.log("ready");});
 // error handling
 player.on('deviceError', function()
 {
@@ -33,8 +33,6 @@ player.on('startRecord', function()
 player.on('finishRecord', function()
 {
     
-
-
     var data = new FormData();
 
     var isChrome = !!window.chrome && !!window.chrome.webstore;
@@ -46,8 +44,10 @@ player.on('finishRecord', function()
     data.append('file', player.recordedData);
 
     }
-
-
+    data.append('name', $("input[name='name']").val());
+    data.append('email', $("input[name='email']").val());
+    data.append('language_id', $("input[name='language_id']").val());
+    
    $.ajax({
         url :  "videos",
         type: 'POST',

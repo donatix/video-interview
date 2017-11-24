@@ -39,7 +39,21 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Language</label>
+                                    <div class="col-md-6">
+                                    @foreach ($languages as $language)
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" id="language_id" name="language_id" @if ($language->id === 1) checked="checked" @endif value="{{ $language->id }}">
+                                                {{ $language->name }} / {{ $language->abbr }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                    </div>
+                                </div>
+
+                                <?php /*  <!-- <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                                     <label class="col-md-4 control-label">Captcha</label>
 
                                     <div class="col-md-6">
@@ -51,7 +65,8 @@
                                             </span>
                                         @endif
                                     </div>
-                                </div>
+                                </div> -->*/
+                                ?>
 
                                <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">

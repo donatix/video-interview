@@ -43,7 +43,7 @@ if (!(isChrome || isFirefox)) {
   startButton.on('click',function(){
 
   	//Check if video is recording
-  	// questions.css( "display", "block" );
+  	questions.css( "display", "block" );
   	startButton.css( "display", "none" );
 
 

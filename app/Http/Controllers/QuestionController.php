@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Language;
 
 class QuestionController extends Controller
 {
@@ -19,19 +20,19 @@ class QuestionController extends Controller
     }
     public function create()
     {	
-        return view('questions.create');
+        $languages=Language::all();
+        
+        return view('questions.create', compact('languages'));
     }
     public function store(Request $request){
-    	
-    	Question::create([
-            'body' => $request->body,
-        ]);
+
+        Question::create($request->all());
     	
     	return redirect()->to('questions');	
     }
     public function show($id){
     	
-    	$question=Question::findOrFail($id);
+        $question=Question::findOrFail($id);
     	
     	return view('questions.show',compact('question'));
     }
